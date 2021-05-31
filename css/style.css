@@ -24,7 +24,12 @@ ul {
 }
 
 body {
-  background-color: #faf6ed;
+  background: rgb(250, 246, 237);
+  background: linear-gradient(
+    173deg,
+    rgba(250, 246, 237, 1) 0%,
+    rgba(208, 207, 205, 1) 100%
+  );
   color: #222;
   -webkit-font-feature-smoothing: antialiased;
   display: grid;
@@ -44,9 +49,48 @@ body {
   padding: 10px;
 }
 
+.snip1555 li {
+  padding: 5px 5px;
+  position: relative;
+}
+
+.snip1555 li:before,
+.snip1555 li:after {
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  height: 2px;
+  width: 35%;
+  background-color: #faf6ed;
+  position: absolute;
+  content: "";
+  opacity: 0;
+}
+.snip1555 li:before {
+  top: 0;
+  left: 0;
+}
+.snip1555 li:after {
+  bottom: 0;
+  right: 0;
+}
+.snip1555 li:hover:before,
+.snip1555 li.hover:before,
+.snip1555 li:hover:after,
+.snip1555 li.hover:after {
+  opacity: 1;
+}
+.snip1555 li:hover:before,
+.snip1555 li.hover:before {
+  left: 65%;
+}
+.snip1555 li:hover:after,
+.snip1555 li.hover:after {
+  right: 65%;
+}
+
 .menu li a {
   display: block;
-  padding: 10px;
+  padding: 7px;
   margin-right: 10px;
   color: #222;
   text-decoration: none;
@@ -113,7 +157,7 @@ body {
 }
 
 .animais-lista::-webkit-scrollbar-thumb {
-  background: #FB5;
+  background: #fb5;
   border-left: 4px solid #faf6ed;
   border-right: 4px solid #faf6ed;
   border-radius: 8px;
@@ -136,25 +180,25 @@ body {
 }
 
 .faq-lista dt {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: bold;
   margin-top: 2rem;
-  margin-bottom: .5rem;
-  color: #E54;
+  margin-bottom: 0.5rem;
+  color: #e54;
 }
 
 .faq-lista dt::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 20px;
   height: 10px;
   margin-right: 10px;
-  background: #FB5;
+  background: #fb5;
 }
 
 .faq-lista dd {
   font-family: Helvetica, Arial;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   margin-left: 30px;
 }
 
@@ -172,23 +216,23 @@ body {
 }
 
 .dados li::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 20px;
   height: 10px;
   margin-right: 10px;
-  background: #FB5;
+  background: #fb5;
 }
 
 .copy {
   grid-column: 3 / 5;
   margin-bottom: 2rem;
-  background: #FB5;
+  background: #fb5;
 }
 
 .copy p {
   padding: 20px;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: bold;
 }
 
@@ -197,7 +241,9 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .menu, .grid-section, .copy {
+  .menu,
+  .grid-section,
+  .copy {
     grid-column: 1;
   }
 
@@ -210,7 +256,9 @@ body {
     grid-column: 1;
   }
 
-  .faq-lista, .dados, .mapa {
+  .faq-lista,
+  .dados,
+  .mapa {
     grid-column: 1 / 3;
   }
 
@@ -225,5 +273,4 @@ body {
   .copy {
     margin-bottom: 0;
   }
-
 }
