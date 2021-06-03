@@ -49,13 +49,13 @@ body {
   padding: 10px;
 }
 
-.snip1555 li {
-  padding: 5px 5px;
+.nav-bar li {
+  padding: 4px 4px;
   position: relative;
 }
 
-.snip1555 li:before,
-.snip1555 li:after {
+.nav-bar li:before,
+.nav-bar li:after {
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
   height: 2px;
@@ -65,26 +65,26 @@ body {
   content: "";
   opacity: 0;
 }
-.snip1555 li:before {
+.nav-bar li:before {
   top: 0;
   left: 0;
 }
-.snip1555 li:after {
+.nav-bar li:after {
   bottom: 0;
   right: 0;
 }
-.snip1555 li:hover:before,
-.snip1555 li.hover:before,
-.snip1555 li:hover:after,
-.snip1555 li.hover:after {
+.nav-bar li:hover:before,
+.nav-bar li.hover:before,
+.nav-bar li:hover:after,
+.nav-bar li.hover:after {
   opacity: 1;
 }
-.snip1555 li:hover:before,
-.snip1555 li.hover:before {
+.nav-bar li:hover:before,
+.nav-bar li.hover:before {
   left: 65%;
 }
-.snip1555 li:hover:after,
-.snip1555 li.hover:after {
+.nav-bar li:hover:after,
+.nav-bar li.hover:after {
   right: 65%;
 }
 
@@ -150,6 +150,10 @@ body {
   height: 370px;
   overflow-y: scroll;
   grid-column: 2;
+}
+
+.animais-lista li {
+  cursor: pointer;
 }
 
 .animais-lista::-webkit-scrollbar {
@@ -272,5 +276,25 @@ body {
 
   .copy {
     margin-bottom: 0;
+  }
+}
+
+.js .js-tabcontent section {
+  display: none;
+}
+
+.js-tabcontent section.ativo {
+  display: block !important;
+  animation: show .5s forwards;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
