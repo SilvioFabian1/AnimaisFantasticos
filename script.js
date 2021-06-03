@@ -27,12 +27,10 @@ function initTabNav() {
 initTabNav();
 
 function initAccordion() {
-
   const accordionList = document.querySelectorAll(".js-accordion dt"),
-        ativo = 'ativo';
+    ativo = "ativo";
 
   if (accordionList.length) {
-
     accordionList[0].classList.add(ativo);
     accordionList[0].nextElementSibling.classList.add(ativo);
 
@@ -48,3 +46,32 @@ function initAccordion() {
 }
 
 initAccordion();
+
+function scrollSuave() {
+  const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
+
+  function scrollToSection(event) {
+    event.preventDefault();
+    const href = event.currentTarget.getAttribute("href");
+    const section = document.querySelector(href);
+    //-do scrollTo- const topo = section.offsetTop;
+
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    /* Alternativo
+    window.scrollTo ({
+      top: topo,
+      behavior: 'smooth',
+    })
+    */
+  }
+
+  linksInternos.forEach((link) => {
+    link.addEventListener("click", scrollToSection);
+  });
+}
+
+scrollSuave();
